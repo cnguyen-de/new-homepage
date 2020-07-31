@@ -1,26 +1,32 @@
 <template>
   <div id="app">
-    <div class="flex bg-gray-800">
-      <Hero />
-      <Bio v-if="displayInfo" />
+    <div class="flex flex-grow bg-gray-200">
+      <Hero v-show="!displayInfo || windowWidth > 850" />
+      <Details v-if="displayInfo" />
     </div>
   </div>
 </template>
 
 <script>
 import Hero from './components/Hero.vue'
-import Bio from './components/Bio.vue'
+import Details from './components/Details.vue'
 
 export default {
   name: 'App',
   components: {
     Hero,
-    Bio
+    Details
   },
   data() {
     return {
-      displayInfo: false
+      displayInfo: this.$store.state.collapse
     }
+  },
+  mounted() {
+    console.log(this.displayInfo)
+    window.addEventListener('resize', () => {
+      this.$store.commit('setWidth', window.innerWidth)
+    })
   },
   watch: {
     collapse(state) {
@@ -36,6 +42,9 @@ export default {
   computed: {
     collapse() {
       return this.$store.state.collapse
+    },
+    windowWidth() {
+      return this.$store.state.windowWidth
     }
   }
 }

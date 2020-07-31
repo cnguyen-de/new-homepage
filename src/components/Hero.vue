@@ -16,21 +16,11 @@
       <div class="text-xl italic font-bold pt-2">Website currently under reconstruction!</div>
     </div>
 
-    <div class="hero__navigation inline-flex even">
-      <div class="navigation-button-wrapper p-2 m-2 bg-blue-800 rounded">
-        <button class="button" @click="toggle()">Click</button>
-      </div>
-      <div class="navigation-button-wrapper p-2 m-2 bg-blue-800 rounded">
-        <button class="button" @click="toggle()">Click</button>
-      </div>
-      <div class="navigation-button-wrapper p-2 m-2 bg-blue-800 rounded">
-        <button class="button" @click="toggle()">Click</button>
-      </div>
-      <div class="navigation-button-wrapper p-2 m-2 bg-blue-800 rounded">
-        <button class="button" @click="toggle()">Click</button>
-      </div>
-      <div class="navigation-button-wrapper p-2 m-2 bg-blue-800 rounded">
-        <button class="button" @click="toggle()">Click</button>
+    <div class="hero__navigation inline-flex justify-evenly flex-wrap">
+      <div v-for="link in links.slice(1, -1)" :key="link.name">
+        <div class="navigation-button-wrapper p-2 m-2 bg-blue-800 rounded">
+          <router-link :to="{ name: link.name }">{{ link.name }}</router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -39,6 +29,8 @@
 <script>
 import Avatar from './Avatar.vue'
 import Novatec from './Novatec.vue'
+import routes from '../router/index'
+
 export default {
   name: 'Hero',
   components: {
@@ -47,22 +39,15 @@ export default {
   },
   data() {
     return {
-      windowWidth: window.innerWidth
-    }
-  },
-  mounted() {
-    window.addEventListener('resize', () => {
-      this.windowWidth = window.innerWidth
-    })
-  },
-  methods: {
-    toggle() {
-      this.$store.commit('toggleHero')
+      links: routes.options.routes
     }
   },
   computed: {
     collapse() {
       return this.$store.state.collapse
+    },
+    windowWidth() {
+      return this.$store.state.windowWidth
     }
   }
 }
