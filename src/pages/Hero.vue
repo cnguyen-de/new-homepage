@@ -1,6 +1,6 @@
 <template>
   <div
-    class="hero hero--pattern bg-gray-900 min-h-screen max-h-screen text-gray-200"
+    class="hero hero--pattern relative bg-gray-900 min-h-screen max-h-screen text-gray-200"
     :class="{
       'hero--desktop-minimal': collapse && windowWidth > breakpointWidth,
       'hero--mobile-minimal': collapse && windowWidth <= breakpointWidth,
@@ -10,8 +10,8 @@
     <div class="hero__profile" :class="{ 'hero__profile--hidden': displayInfo && windowWidth <= breakpointWidth }">
       <Avatar />
       <div class="entrance-from-bottom">
-        <div class="xs:text-3xl sm:text-4xl xl:text-5xl">Chi Nguyen</div>
-        <div class="xs:text-xl sm:text-2xl xl:text-3xl novatec">
+        <div class="text-xl xs:text-3xl sm:text-4xl xl:text-5xl">Chi Nguyen</div>
+        <div class="text-base xs:text-xl sm:text-2xl xl:text-3xl novatec">
           Consultant and Frontend Architect at
           <Novatec />
         </div>
@@ -20,6 +20,12 @@
     <Navbar
       :class="{ 'move-to-top': collapse && windowWidth <= breakpointWidth, 'move-back-down': !collapse && windowWidth <= breakpointWidth }"
     />
+    <Contact
+      class="mb-4"
+      :class="{ 'pr-2/12': collapse && windowWidth > breakpointWidth }"
+      v-if="!displayInfo || windowWidth > breakpointWidth"
+      v-bind:white="true"
+    />
   </div>
 </template>
 
@@ -27,13 +33,15 @@
 import Avatar from '../components/Avatar.vue'
 import Novatec from '../components/Novatec.vue'
 import Navbar from '../components/Navbar.vue'
+import Contact from '../components/Contact.vue'
 
 export default {
   name: 'Hero',
   components: {
     Avatar,
     Novatec,
-    Navbar
+    Navbar,
+    Contact
   },
   data() {
     return {

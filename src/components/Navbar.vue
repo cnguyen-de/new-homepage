@@ -6,7 +6,7 @@
     <div v-for="link in links.slice(1, -1)" :key="link.name">
       <div class="navbar__link-wrapper m-auto ml-4 ">
         <router-link
-          class="navbar__link relative xs:text-sm sm:text-xl text-blue-300 font-hairline tracking-wide hover:text-white"
+          class="navbar__link relative text-xs xs:text-base sm:text-xl text-blue-300 font-hairline tracking-wide hover:text-white"
           :class="{ selected: currentRoute == link.path }"
           :to="{ name: link.name }"
         >
