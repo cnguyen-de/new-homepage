@@ -1,26 +1,24 @@
 <template>
   <div id="app">
-    <div class="flex flex-grow bg-gray-200" :class="{ 'flex-col': windowWidth <= breakpointWidth }">
-      <!-- HIDE when windowWidth is smaller than 850 AND info is displaying -->
+    <div
+      class="flex-grow bg-gray-200 min-h-screen"
+      :class="{ 'flex-col': windowWidth <= breakpointWidth, flex: windowWidth > breakpointWidth }"
+    >
       <Hero />
-      <!-- SHOW when windowWidth is smaller than 850 AND info is displaying -->
-      <!--       <MobileHeader v-show="displayInfo && windowWidth <= 850" /> -->
       <Details v-if="displayInfo" />
     </div>
   </div>
 </template>
 
 <script>
-import Hero from './components/Hero.vue'
-import Details from './components/Details.vue'
-/* import MobileHeader from './components/MobileHeader.vue'
- */
+import Hero from './pages/Hero.vue'
+import Details from './pages/Details.vue'
+
 export default {
   name: 'App',
   components: {
     Hero,
     Details
-    /* MobileHeader */
   },
   data() {
     return {
@@ -29,7 +27,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this.displayInfo)
     window.addEventListener('resize', () => {
       this.$store.commit('setWidth', window.innerWidth)
     })

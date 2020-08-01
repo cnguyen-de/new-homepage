@@ -1,5 +1,7 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <!-- EMPTY PAGE, HERO WILL OVERRIDE -->
+  </div>
 </template>
 
 <script>

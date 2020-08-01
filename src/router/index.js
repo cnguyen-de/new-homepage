@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../components/Home.vue'
+import Home from '../pages/Home.vue'
 import { store } from '../store/state'
 
 Vue.use(VueRouter)
@@ -14,17 +14,17 @@ export const routes = [
   {
     path: '/bio',
     name: 'About me',
-    component: () => import('../components/Bio.vue')
+    component: () => import('../pages/Bio.vue')
   },
   {
     path: '/competence',
     name: 'Competence',
-    component: () => import('../components/Competence.vue')
+    component: () => import('../pages/Competence.vue')
   },
   {
     path: '/portfolio',
     name: 'Portfolio',
-    component: () => import('../components/Portfolio.vue')
+    component: () => import('../pages/Portfolio.vue')
   },
   /* 
   {

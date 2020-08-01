@@ -1,7 +1,10 @@
 <template>
   <div class="navbar inline-flex justify-evenly flex-wrap pt-4 ">
+    <div class="relative h-8 w-8 rounded-full ml-1" v-show="collapse && windowWidth <= breakpointWidth">
+      <img class="absoluate top-0 h-full w-full rounded-full object-cover" style="object-position: 20% 0" src="../assets/avatar-1.webp" />
+    </div>
     <div v-for="link in links.slice(1, -1)" :key="link.name">
-      <div class="navbar__link-wrapper m-auto mr-4 ">
+      <div class="navbar__link-wrapper m-auto ml-4 ">
         <router-link
           class="navbar__link relative xs:text-sm sm:text-xl text-blue-300 font-hairline tracking-wide hover:text-white"
           :class="{ selected: currentRoute == link.path }"
@@ -22,14 +25,22 @@ export default {
   data() {
     return {
       links: routes.options.routes,
-      currentRoute: ''
+      currentRoute: '',
+      breakpointWidth: this.$store.state.breakpointWidth
     }
   },
   watch: {
+    // eslint-disable-next-line no-unused-vars
     $route(to, from) {
-      console.log(to, from)
-      console.log(to.path, this.links)
       this.currentRoute = to.path
+    }
+  },
+  computed: {
+    collapse() {
+      return this.$store.state.collapse
+    },
+    windowWidth() {
+      return this.$store.state.windowWidth
     }
   }
 }
