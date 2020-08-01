@@ -1,6 +1,6 @@
 <template>
   <div class="bio">
-    <div class="text-5xl">Bio Page</div>
+    <div class="text-4xl">Bio Page</div>
   </div>
 </template>
 

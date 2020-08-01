@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     collapse: false,
-    windowWidth: window.innerWidth
+    windowWidth: window.innerWidth,
+    breakpointWidth: 888
   },
   mutations: {
     toggleHero(state, status) {

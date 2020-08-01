@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <span class="pl-1 whitespace-no-wrap">
     <svg
       class="accent-color-gradients"
       xmlns="http://www.w3.org/2000/svg"

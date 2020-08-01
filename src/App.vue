@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <div class="flex flex-grow bg-gray-200">
-      <Hero v-show="!displayInfo || windowWidth > 850" />
+    <div class="flex flex-grow bg-gray-200" :class="{ 'flex-col': windowWidth <= breakpointWidth }">
+      <!-- HIDE when windowWidth is smaller than 850 AND info is displaying -->
+      <Hero />
+      <!-- SHOW when windowWidth is smaller than 850 AND info is displaying -->
+      <!--       <MobileHeader v-show="displayInfo && windowWidth <= 850" /> -->
       <Details v-if="displayInfo" />
     </div>
   </div>
@@ -10,16 +13,19 @@
 <script>
 import Hero from './components/Hero.vue'
 import Details from './components/Details.vue'
-
+/* import MobileHeader from './components/MobileHeader.vue'
+ */
 export default {
   name: 'App',
   components: {
     Hero,
     Details
+    /* MobileHeader */
   },
   data() {
     return {
-      displayInfo: this.$store.state.collapse
+      displayInfo: this.$store.state.collapse,
+      breakpointWidth: this.$store.state.breakpointWidth
     }
   },
   mounted() {
