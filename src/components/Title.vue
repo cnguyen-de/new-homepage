@@ -2,17 +2,17 @@
   <div class="mt-0 br:mt-3 header relative inline-block min-w-full">
     <div class="text-2xl sm:text-3xl md:text-4xl tracking-wide">{{ title }}</div>
 
-    <div class="details__return-button h-8 w-8 rounded text-gray-200 absolute top-0 left-0">
+    <div class="details__back-button h-10 w-10 p-1 br:h-12 br:w-12 rounded text-gray-200 hover:bg-gray-400 absolute top-0 left-0">
       <router-link class="font-bold" to="/">
         <svg
           class="details__back-button--desktop"
           v-if="windowWidth > breakpointWidth"
           xmlns="http://www.w3.org/2000/svg"
-          width="48"
-          height="48"
+          width="40"
+          height="40"
           viewBox="0 0 512 512"
         >
-          <title>ionicons-v5-b</title>
+          <title>Return to Homepage</title>
           <path
             d="M64,256c0,106,86,192,192,192s192-86,192-192S362,64,256,64,64,150,64,256Z"
             style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"
@@ -30,7 +30,7 @@
           height="32"
           viewBox="0 0 512 512"
         >
-          <title>ionicons-v5-b</title>
+          <title>Return to Homepage</title>
           <path
             d="M256,64C150,64,64,150,64,256s86,192,192,192,192-86,192-192S362,64,256,64Z"
             style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"
@@ -64,4 +64,7 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.details__back-button {
+}
+</style>

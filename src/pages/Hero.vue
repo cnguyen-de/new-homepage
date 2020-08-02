@@ -9,7 +9,7 @@
   >
     <div class="hero__profile" :class="{ 'hero__profile--hidden': displayInfo && windowWidth <= breakpointWidth }">
       <Avatar />
-      <div class="entrance-from-bottom">
+      <div class="entrance-from-bottom pb-6">
         <div class="text-xl xs:text-3xl sm:text-4xl xl:text-5xl">Chi Nguyen</div>
         <div class="text-base xs:text-xl sm:text-2xl xl:text-3xl novatec">
           Consultant and Frontend Architect at
@@ -18,14 +18,20 @@
       </div>
     </div>
     <Navbar
-      :class="{ 'move-to-top': collapse && windowWidth <= breakpointWidth, 'move-back-down': !collapse && windowWidth <= breakpointWidth }"
+      :class="{
+        'move-to-top': collapse && windowWidth <= breakpointWidth,
+        'move-back-down-mobile': typeof currentRoute !== 'undefined' && !collapse && windowWidth <= breakpointWidth && windowWidth < 640,
+        'move-back-down-tablet': typeof currentRoute !== 'undefined' && !collapse && windowWidth <= breakpointWidth && windowWidth >= 640
+      }"
     />
+    <!-- 
     <Contact
       class="mb-4"
       :class="{ 'pr-2/12': collapse && windowWidth > breakpointWidth }"
       v-if="!displayInfo || windowWidth > breakpointWidth"
       v-bind:white="true"
     />
+     -->
   </div>
 </template>
 
@@ -33,19 +39,18 @@
 import Avatar from '../components/Avatar.vue'
 import Novatec from '../components/Novatec.vue'
 import Navbar from '../components/Navbar.vue'
-import Contact from '../components/Contact.vue'
 
 export default {
   name: 'Hero',
   components: {
     Avatar,
     Novatec,
-    Navbar,
-    Contact
+    Navbar
   },
   data() {
     return {
       displayInfo: this.$store.state.collapse,
+      currentRoute: this.$route.currentRoute,
       breakpointWidth: this.$store.state.breakpointWidth
     }
   },
@@ -58,6 +63,10 @@ export default {
       } else {
         this.displayInfo = state
       }
+    },
+    // eslint-disable-next-line no-unused-vars
+    $route(to, from) {
+      this.currentRoute = to
     }
   },
   computed: {
@@ -88,10 +97,11 @@ export default {
   clip-path: polygon(0 0, 100% 0%, 87% 100%, 0 100%);
 }
 .hero--mobile-minimal {
-  min-height: 64px;
+  min-height: 48px;
   transition: 0.5 ease-in-out;
   background-image: unset;
-  clip-path: polygon(0 0, 100% 0%, 100% 87%, 0 100%);
+  /*   clip-path: polygon(0 0, 100% 0%, 100% 75%, 0 100%);
+ */
 }
 .hero__profile {
   height: 100%;
@@ -107,7 +117,7 @@ export default {
 }
 @keyframes moveToTop {
   from {
-    transform: translateY(550px);
+    transform: translateY(424px);
     transition-timing-function: ease-in-out;
   }
   to {
@@ -116,7 +126,7 @@ export default {
   }
 }
 
-.move-back-down {
+.move-back-down-mobile {
   animation-duration: 0.5s;
   animation-name: moveBackDown;
 }
@@ -126,7 +136,21 @@ export default {
     transition-timing-function: ease-in-out;
   }
   to {
-    transform: translateY(400px);
+    transform: translateY(424px);
+    transition-timing-function: ease-in-out;
+  }
+}
+.move-back-down-tablet {
+  animation-duration: 0.5s;
+  animation-name: moveBackDownTablet;
+}
+@keyframes moveBackDownTablet {
+  from {
+    transform: translateY(0);
+    transition-timing-function: ease-in-out;
+  }
+  to {
+    transform: translateY(538px);
     transition-timing-function: ease-in-out;
   }
 }
@@ -138,7 +162,7 @@ export default {
 @keyframes entranceFromBottom {
   from {
     opacity: 0;
-    transform: translateY(80px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
