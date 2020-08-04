@@ -11,7 +11,7 @@
       <Avatar />
       <div class="entrance-from-bottom pb-6">
         <div class="text-xl xs:text-3xl sm:text-4xl xl:text-5xl">Chi Nguyen</div>
-        <div class="text-base xs:text-xl sm:text-2xl xl:text-3xl novatec">
+        <div class="text-base px-2 xs:text-xl sm:text-2xl xl:text-3xl font-light">
           Consultant and Frontend Architect at
           <Novatec />
         </div>
@@ -93,6 +93,7 @@ export default {
 .hero--desktop-minimal {
   padding: 0 3rem 0 1rem;
   width: 37%;
+  min-width: 37%;
   transition: 0.5 ease-in-out;
   clip-path: polygon(0 0, 100% 0%, 87% 100%, 0 100%);
 }

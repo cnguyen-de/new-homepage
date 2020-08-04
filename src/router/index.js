@@ -12,7 +12,7 @@ export const routes = [
     component: Home
   },
   {
-    path: '/bio',
+    path: '/about-me',
     name: 'About me',
     component: () => import('../pages/Bio.vue')
   },

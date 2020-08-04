@@ -1,5 +1,5 @@
 <template>
-  <div class="details p-3 flex-grow">
+  <div class="details py-4 px-6">
     <router-view></router-view>
     <!-- 
     <div class="absolute min-w-full bottom-0">

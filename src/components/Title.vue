@@ -1,47 +1,34 @@
 <template>
-  <div class="mt-0 br:mt-3 header relative inline-block min-w-full">
-    <div class="text-2xl sm:text-3xl md:text-4xl tracking-wide">{{ title }}</div>
-
-    <div class="details__back-button h-10 w-10 p-1 br:h-12 br:w-12 rounded text-gray-200 hover:bg-gray-400 absolute top-0 left-0">
-      <router-link class="font-bold" to="/">
+  <div class="title pb-4 my-0 mb-1 br:my-3 header relative inline-block min-w-full">
+    <div class="text-3xl sm:text-4xl md:text-5xl font-light">{{ title }}</div>
+    <router-link class="font-bold" to="/">
+      <div
+        class="details__back-button h-10 w-10 p-2 br:h-12 br:w-12 rounded text-gray-200 hover:bg-gray-400 absolute left-0 top-1 md:top-4"
+      >
         <svg
-          class="details__back-button--desktop"
+          class="details__back-button--desktop h-8 w-8 text-gray-800"
           v-if="windowWidth > breakpointWidth"
+          viewBox="0 0 15 15"
+          fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          width="40"
-          height="40"
-          viewBox="0 0 512 512"
+          width="30"
+          height="30"
         >
-          <title>Return to Homepage</title>
-          <path
-            d="M64,256c0,106,86,192,192,192s192-86,192-192S362,64,256,64,64,150,64,256Z"
-            style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <polyline
-            points="216 352 312 256 216 160"
-            style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
-          />
+          <path d="M7 14l7-6.5L7 1M1.5 14l7-6.5-7-6.5" stroke="currentColor" stroke-linecap="square"></path>
         </svg>
         <svg
-          class="details__back-button--mobile"
+          class="details__back-button--desktop h-6 w-6 text-gray-800"
           v-if="windowWidth <= breakpointWidth"
+          viewBox="0 0 15 15"
+          fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 512 512"
+          width="30"
+          height="30"
         >
-          <title>Return to Homepage</title>
-          <path
-            d="M256,64C150,64,64,150,64,256s86,192,192,192,192-86,192-192S362,64,256,64Z"
-            style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"
-          />
-          <polyline
-            points="352 216 256 312 160 216"
-            style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"
-          />
+          <path d="M1 7l6.5 7L14 7M1 1.5l6.5 7 6.5-7" stroke="currentColor" stroke-linecap="square"></path>
         </svg>
-      </router-link>
-    </div>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -64,7 +51,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.details__back-button {
-}
-</style>
+<style scoped></style>

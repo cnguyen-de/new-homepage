@@ -42,11 +42,22 @@ module.exports = {
         '66': '16.5rem',
         '96': '24rem',
         '98': '24.5rem'
+      },
+      inset: {
+        '0': 0,
+        auto: 'auto',
+        '1/2': '50%',
+        '1': '0.25rem',
+        '4': '1rem'
       }
     }
   },
   variants: {
-    cursor: ['responsive', 'hover', 'focus']
+    cursor: ['responsive', 'hover', 'focus'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+    borderColor: ['responsive', 'hover', 'focus', 'active'],
+    border: ['responsive', 'hover', 'focus', 'active'],
+    borderStyle: ['responsive', 'hover', 'focus', 'active']
   },
   plugins: [],
   purge: ['./src/**/*.html', './src/**/*.vue']
