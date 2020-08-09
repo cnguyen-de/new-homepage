@@ -1,23 +1,57 @@
 <template>
   <div class="competence">
     <Title title="Competence" />
-    <div class="rounded max-w-full br:p-4 br:px-16 text-lg text-gray-700 text-justify">
+    <div class="rounded max-w-full br:p-4 br:px-16 text-xl text-gray-700 text-justify">
       <p class="bio__intro leading-relaxed mb-4">
-        Consultant, Software Engineer, Fullstack, Multiplatform App, Microservice Architecture Design. I like to delve myself into the
-        latest technologies and devices, my favorite quote is Sir Francis Bacon's "Knowledge is power".
+        I'm currently working as Consultant at Novatec Gmbh. As such I'm offering a wide range of
+        competences.
       </p>
       <p class="leading-relaxed mb-4">
-        Consultant, Software Engineer, Fullstack, Multiplatform App, Microservice Architecture Design. I like to delve myself into the
-        latest technologies and devices, my favorite quote is Sir Francis Bacon's "Knowledge is power".
+        I've had experience doing architectural work, especially regarding frontend for several
+        projects. I've also worked on Mobile-First/-Native applications. My forte is versatility,
+        the following technologies are ones I've used in projects.
       </p>
-      <p class="leading-relaxed mb-4">
-        Consultant, Software Engineer, Fullstack, Multiplatform App, Microservice Architecture Design. I like to delve myself into the
-        latest technologies and devices, my favorite quote is Sir Francis Bacon's "Knowledge is power".
-      </p>
-      <p class="leading-relaxed mb-4">
-        Consultant, Software Engineer, Fullstack, Multiplatform App, Microservice Architecture Design. I like to delve myself into the
-        latest technologies and devices, my favorite quote is Sir Francis Bacon's "Knowledge is power".
-      </p>
+      <div
+        class="leading-relaxed mb-4 grid grid-cols-2 sm:grid-cols-3 gap-4 overflow-auto"
+        style="overflow-wrap: break-word"
+      >
+        <div class="frontend">
+          <b>Frontend</b>
+          <br />
+          Angular
+          <br />
+          React
+          <br />
+          Vue
+        </div>
+        <div class="backend">
+          <b>Backend</b>
+          <br />
+          Flask/FastAPI/Tornado
+          <br />
+          Spring Boot
+          <br />
+          Nodejs
+        </div>
+        <div class="other">
+          <b>Other frameworks</b>
+          <br />
+          Android
+          <br />
+          Gstreamer/FFmpeg
+          <br />
+          OpenCV
+        </div>
+        <div class="dev">
+          <b>Languages</b>
+          <br />
+          JavaScript (ES6/TypeScript)
+          <br />
+          Python
+          <br />
+          Java
+        </div>
+      </div>
     </div>
     <!-- 
     <div class="p-16 login bg-white w-2/3 rounded text-left flex flex-col">

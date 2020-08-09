@@ -22,8 +22,8 @@ export const routes = [
     component: () => import('../pages/Competence.vue')
   },
   {
-    path: '/portfolio',
-    name: 'Portfolio',
+    path: '/blog',
+    name: 'Blog',
     component: () => import('../pages/Portfolio.vue')
   },
   /* 

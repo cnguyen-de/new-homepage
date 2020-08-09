@@ -1,8 +1,5 @@
 <template>
   <div class="navbar inline-flex justify-evenly flex-wrap pt-2 ">
-    <!-- <div class="relative h-8 w-8 rounded-full ml-1" v-show="collapse && windowWidth <= breakpointWidth">
-      <img class="absoluate top-0 h-full w-full rounded-full object-cover" style="object-position: 20% 0" src="../assets/avatar-1.webp" />
-    </div> -->
     <div v-for="link in links.slice(1, -1)" :key="link.name">
       <div class="navbar__link-wrapper m-auto ml-4 ">
         <router-link
