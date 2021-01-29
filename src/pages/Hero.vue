@@ -11,8 +11,8 @@
       <Avatar />
       <div class="entrance-from-bottom pb-6">
         <div class="text-xl xs:text-3xl sm:text-4xl xl:text-5xl">Chi Nguyen</div>
-        <div class="text-base px-2 xs:text-xl sm:text-2xl xl:text-3xl font-light">
-          Consultant and Frontend Architect at
+        <div class="text-base px-2 mt-2 xs:text-xl sm:text-2xl xl:text-3xl font-light">
+          Consultant, Frontend architect at
           <Novatec />
         </div>
       </div>
@@ -20,8 +20,10 @@
     <Navbar
       :class="{
         'move-to-top': collapse && windowWidth <= breakpointWidth,
-        'move-back-down-mobile': typeof currentRoute !== 'undefined' && !collapse && windowWidth <= breakpointWidth && windowWidth < 640,
-        'move-back-down-tablet': typeof currentRoute !== 'undefined' && !collapse && windowWidth <= breakpointWidth && windowWidth >= 640
+        'move-back-down-mobile':
+          typeof currentRoute !== 'undefined' && !collapse && windowWidth <= breakpointWidth && windowWidth < 640,
+        'move-back-down-tablet':
+          typeof currentRoute !== 'undefined' && !collapse && windowWidth <= breakpointWidth && windowWidth >= 640
       }"
     />
     <!-- 

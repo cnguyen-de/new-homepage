@@ -3,7 +3,7 @@
     <div class="text-3xl sm:text-4xl md:text-5xl font-light">{{ title }}</div>
     <router-link class="font-bold" to="/">
       <div
-        class="details__back-button h-10 w-10 p-2 br:h-12 br:w-12 rounded text-gray-200 hover:bg-gray-400 absolute left-0 top-1 md:top-4"
+        class="details__back-button h-10 w-10 p-2 br:h-12 br:w-12 rounded text-gray-200 hover:bg-gray-300 absolute left-0 top-1 md:top-4"
       >
         <svg
           class="details__back-button--desktop h-8 w-8 text-gray-800"

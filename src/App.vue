@@ -1,8 +1,11 @@
 <template>
   <div id="app">
     <div
-      class="flex-grow bg-white min-h-screen"
-      :class="{ 'flex-col': windowWidth <= breakpointWidth, flex: windowWidth > breakpointWidth }"
+      class="flex-grow min-h-screen bg-gray-100"
+      :class="{
+        'flex-col': windowWidth <= breakpointWidth,
+        flex: windowWidth > breakpointWidth
+      }"
     >
       <Hero />
       <Details v-if="displayInfo" />
